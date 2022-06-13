@@ -40,7 +40,7 @@ Route::get('greeting', function () {
 Route::resource('obat','MedicineController');
 Route::resource('kategori_obat','CategoryController');
 Route::resource('transaction','TransactionController');
-Route::resource('suppliers','SuppliersController');//->middleware('auth');
+Route::resource('suppliers','SuppliersController')->middleware('auth');
 Route::post('transactions/showDataAjax','TransactionController@showAjax')->name('transaction.showAjax');
 Route::post('/supplier/getEditForm','suppliersController@getEditForm')
 ->name('supplier'."getEditForm");
@@ -48,11 +48,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
